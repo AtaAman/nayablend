@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Naya Blend Marketing Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    /* Naya Blend Brand Colors */
+    --primary: 210 73% 18%; /* Navy #0B2C4A */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%; /* Light Grey #F4F5F7 */
+    --secondary-foreground: 210 73% 18%;
+
+    --accent: 45 100% 52%; /* Yellow #FFC107 */
+    --accent-foreground: 210 73% 18%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 73% 18%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --section-padding: 5rem 0;
+    --container-padding: 0 1.5rem;
+    --hero-gradient: linear-gradient(135deg, hsl(210, 73%, 18%) 0%, hsl(210, 60%, 25%) 100%);
+    --accent-gradient: linear-gradient(135deg, hsl(45, 100%, 52%) 0%, hsl(40, 95%, 48%) 100%);
+    --shadow-soft: 0 4px 20px hsl(210, 73%, 18% / 0.08);
+    --shadow-medium: 0 8px 30px hsl(210, 73%, 18% / 0.12);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 73% 18%;
+    --foreground: 0 0% 98%;
+    --card: 210 60% 25%;
+    --card-foreground: 0 0% 98%;
+    --primary: 45 100% 52%;
+    --primary-foreground: 210 73% 18%;
+    --secondary: 210 15% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 210 15% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 45 100% 52%;
+    --accent-foreground: 210 73% 18%;
+    --border: 210 15% 25%;
+    --input: 210 15% 25%;
+    --ring: 45 100% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20;
+  }
+  
+  .container-padding {
+    @apply px-6 mx-auto max-w-7xl;
+  }
+
+  .gradient-hero {
+    background: var(--hero-gradient);
+  }
+
+  .gradient-accent {
+    background: var(--accent-gradient);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Button Components */
+  .btn-primary {
+    @apply bg-accent text-accent-foreground hover:opacity-90 transition-smooth;
+  }
+
+  .btn-secondary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth;
+  }
+}
